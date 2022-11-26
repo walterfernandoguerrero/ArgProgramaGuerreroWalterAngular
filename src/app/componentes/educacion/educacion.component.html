@@ -1,0 +1,40 @@
+<div id="Educacion" class="Paneles">
+    <img src="/assets/certificado2.png" alt="foto" class="imagenApertura">
+    <h2>Educación</h2>
+    <ul *ngFor="let educacion of edu">
+        <li>{{educacion.nombreEdu}}</li>
+        
+    </ul>
+    
+
+    <!--prueva de servicio-->
+    <div class="botonDerecha">
+        <button class="btn btn-success" routerLink="/pagNuevEdu">
+            Agregar Nuevo Estudio
+        </button>
+        
+    </div>
+    <div class="row">
+        <div class="col lg 1">
+            <h2 style="text-align:center ;">LISTA EDUCACION</h2>
+            <div class="col-lg-10">
+                <table class="table">
+                    <tbody>
+                        <tr *ngFor="let educacion of edu">
+                           <td>{{educacion.nombreEdu}}</td>
+                           <td>{{educacion.descripcionEdu}}</td>
+                           <td><button class="btn btn-success" routerLink="/pagEditEdu/{{educacion.id}}">
+                            Editar
+                            </button></td>
+                           <td><button class="btn btn-success" (click)="borrar(educacion.id)">
+                                Borrar
+                            </button></td>
+                        </tr>
+                    </tbody>
+                   </table>
+               </div>
+        </div>
+    </div>
+    <!--prueva de servicio-->
+
+</div>

@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url("https://www.leidainformatica.com/wp-content/uploads/2019/05/banner-home-informatica-1163x500.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+    
+}
+.Paneles{
+    border: 1px solid white;
+    margin: 20px 0px;
+    border-radius: 5px;
+    background-color: #0b96c7;
+    padding: 10px;
+    color: white;
+}
+header{
+    border: 4px solid white;
+    padding: 15px;
+    background-color: cornflowerblue;
+    border-radius: 5px;
+    color: white;
+    font-size: 25px; 
+    overflow: hidden;
+    background-image:url("/assets/banerAzul.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+
+}
+
+#fotoPerfil{
+    border-radius: 38% ;
+    margin: 3px;
+    width:200px; 
+    height:200px;
+    padding: 0 20px;
+    border: 4px solid white;
+}
+#PieDePagina{
+    border-radius: 5px;
+    color:white; 
+    background-color: black; 
+    margin: 3px 3px 0px 0px;
+    border: 1px solid white;
+}
+.conborde{
+    border: 2px solid white;
+    }
+.alinearDerecha{
+    display: flex;
+    justify-content: right;
+}
+.botonDerecha{
+    text-align: right;
+}
+.imagenApertura{
+    float: left; width: 90px; padding: 0 16px; border-radius: 22px;
+    
+}

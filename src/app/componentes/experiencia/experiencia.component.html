@@ -1,0 +1,43 @@
+<div id="Experiencia" class="Paneles">
+    <img src="/assets/experiencia.png" alt="foto" class="imagenApertura">
+    <div style="padding-right: 30px;">
+        
+        <h2>Experiencia</h2>
+        
+</div>
+<div >
+    <ul *ngFor="let Experiencia of expe">
+
+        <li>{{Experiencia.nombreExp}}</li>
+        
+    </ul>
+</div>  
+
+    <div class="botonDerecha">
+        <button class="btn btn-success" routerLink="/paginaExp">
+            Agregar Nueva Experiencia
+        </button>
+        
+    </div>
+    <!--prueva de servicio-->
+    <div class="row">
+        <div class="col lg 1">
+            <h2 style="text-align:center ;">Prueba de servicio Expereincia Laboral</h2>
+            <div class="col-lg-10">
+                <table class="table">
+                    <tbody>
+                        <tr *ngFor="let Experiencia of expe">
+                           <td>{{Experiencia.nombreExp}}</td>
+                           <td>{{Experiencia.descripcionExp}}</td>
+                           <td><button class="btn btn-success">Editar</button></td>
+                           <td><button class="btn btn-success" (click)="delete(Experiencia.id)">Borrar</button></td>
+                        </tr>
+                    </tbody>
+                   </table>
+               </div>
+        </div>
+    </div>
+    <!--prueva de servicio-->
+
+</div>
+
