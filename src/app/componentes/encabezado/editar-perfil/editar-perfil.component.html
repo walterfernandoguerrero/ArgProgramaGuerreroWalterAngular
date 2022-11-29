@@ -1,0 +1,36 @@
+<p>Cambiar mi Perfil</p>
+<app-logo-arg-prog></app-logo-arg-prog>
+<div class="container">
+    <div class="row" >
+        <div>
+            <form (ngSubmit)="onCreate()" novalidate="ngForm">
+                <div class="form-group">
+                    <label for="nombre" style="color:white;">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="perfil.nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="mail" style="color:white;">Mail:</label>
+                    <input type="text" class="form-control" id="mail" name="mail" [(ngModel)]="perfil.mail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono" style="color:white;">Telefono:</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="perfil.telefono" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="direccion" style="color:white;">Dirección:</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" [(ngModel)]="perfil.direccion" required>
+                </div>
+                <div class="form-group">
+                    <label for="imagen" style="color:white;">URLimagen:</label>
+                    <input type="text" class="form-control" id="imagen" name="imagen" [(ngModel)]="perfil.imagen" required>
+                </div>
+
+                <button class="btn btn-success" >
+                    Editar Estudio
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -20,7 +20,9 @@ import { NuevaExperienciaComponent } from './componentes/experiencia/nueva-exper
 import { NuevoEstudioComponent } from './componentes/educacion/nuevo-estudio/nuevo-estudio.component';
 import { EditarEducacionComponent } from './componentes/educacion/editar-educacion/editar-educacion.component';
 import { LogoArgProgComponent } from './componentes/logo-arg-prog/logo-arg-prog.component';
-
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { CirculoValoracionComponent } from './componentes/circulo-valoracion/circulo-valoracion.component';
+import { EditarPerfilComponent } from './componentes/encabezado/editar-perfil/editar-perfil.component';
 
 @NgModule({
   declarations: [
@@ -39,13 +41,16 @@ import { LogoArgProgComponent } from './componentes/logo-arg-prog/logo-arg-prog.
     NuevaExperienciaComponent,
     NuevoEstudioComponent,
     EditarEducacionComponent,
-    LogoArgProgComponent
+    LogoArgProgComponent,
+    CirculoValoracionComponent,
+    EditarPerfilComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,//agregar
     HttpClientModule,//agregar
-    FormsModule//agregar
+    FormsModule,  //agregar
+    NgCircleProgressModule.forRoot({})    //agregar
   ],
   providers: [],
   bootstrap: [AppComponent]

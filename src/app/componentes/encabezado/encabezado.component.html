@@ -1,3 +1,4 @@
+
 <div id="cabecera" class="container " >
     
     <header class="page-header">
@@ -5,18 +6,18 @@
         <button class="btn btn-success" (click)="login()">LOGIN</button>
       </div>
         <img style="float: right ;" class="conborde" src="https://sursantiago.com.ar/wp-content/uploads/2022/02/argentina-programa-llego-a-los-santiaguenos.jpg" alt="arg Programa" width="200px" height="130px">
-        <img id="fotoPerfil" src="/assets/WalterGuerreroTrabajo.jpg" alt="perfil">
+        <img id="fotoPerfil" src="{{datos.imagen}}" alt="perfil">
+        <!--/assets/WalterGuerreroTrabajo.jpg-->
       <div>
-            <h2 style="color: white; text-align: center;"> Guerrero Walter</h2>
-            
+            <h1 style="color: white; text-align: center;">{{datos.nombre}}</h1>
       </div>      
       <div id="datosPersonales">
             <hr>
-            <p> guerrerowalterfernado@gmail.com </p>
-            <p> ARG +54-1149352758 </p>
-            <p> Garin - Escobar - BS.AS. - Argentina  </p>
+            <p>{{datos.mail}}</p>
+            <p>{{datos.telefono}}</p>
+            <p>{{datos.direccion}}</p>
             <div class="botonDerecha">
-              <button class="btn btn-success" >Editar</button>
+              <button class="btn btn-success" routerLink="/pagEditPerfil/:{{datos.id}}" >Editar mi Perfil</button>
           </div>
       </div>
       <div>
