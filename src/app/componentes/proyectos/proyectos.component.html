@@ -1,12 +1,47 @@
 <div id="Proyectos" class="Paneles">
     <img src="/assets/proyectos.jpg" alt="foto" class="imagenApertura">
     <h2>Proyectos</h2>
-    <ul>
-        <li>VB Sistema de Gestion</li>
-        <li>C++ Juego de Naves</li>  
+    <ul *ngFor="let proyecto of proy">
+        <li>{{proyecto.titulo}}</li>
     </ul>
-    <div class="botonDerecha">
-        <button class="btn btn-success">Añadir</button>
-        <button class="btn btn-success">Editar</button>
+   <!--prueva de servicio-->
+   <div class="botonDerecha">
+        <button class="btn btn-success" routerLink="/pagNuevoProy">
+            NUEVO PROYECTO
+        </button>
     </div>
+<div class="row">
+    <div class="col lg 1">
+        <h2 style="text-align:center ;">MIS PROYECTOS</h2>
+        <div class="col-lg-10">
+            <table class="table">
+                <tbody>
+                    <tr style="font-weight:bold;  background-color:black;">
+                        <td>Nombre:</td>
+                        <td>Leguaje:</td>
+                        <td>Herramientas:</td>
+                        <td>Detalle:</td>
+                        <td>Git:</td>
+                        <td>Edit:</td>
+                        <td>Delete:</td>
+                    </tr>
+                    <tr *ngFor="let proyecto of proy">
+                       <td>{{proyecto.titulo}}</td>
+                       <td>{{proyecto.lenguaje}}</td>
+                       <td>{{proyecto.herramientas}}</td>
+                       <td>{{proyecto.detalle}}</td>
+                       <td>{{proyecto.git}}</td>
+                       <td><button class="btn btn-success" routerLink="pagEditProy/{{proyecto.id}}">
+                            Editar
+                        </button></td>
+                       <td><button class="btn btn-success" (click)="delete(proyecto.id)">
+                            Borrar
+                        </button></td>
+                    </tr>
+                </tbody>
+               </table>
+           </div>
+    </div>
+</div>
+<!--prueva de servicio-->
 </div>

@@ -3,17 +3,14 @@
     <div>
             <h2>Acerca de </h2>
     </div>
-
-    <p>{{persona.apellido}}</p>
-    <p>{{persona.apellido}}</p>
-    
-    <p>
-        
-        Estudiante de Programación de la Utn Delta y autodidacta en tecnologias Informaticas
-    </p>
-   
-    <div class="botonDerecha">
-        <button class="btn btn-success">Añadir</button>
-        <button class="btn btn-success">Editar</button>
+    <div id="info">
+        <p>{{info.desc1}}</p>
+        <p>{{info.desc2}}</p>
+        <p>{{info.desc3}}</p>
+        <p>{{info.desc4}}</p>
+        <p>{{info.desc5}}</p>
     </div>
+    <div class="botonDerecha">
+        <button class="btn btn-success" routerLink="/pagEditInfo/:{{info.id}}">Editar mi Información</button>
+    </div> 
 </div>

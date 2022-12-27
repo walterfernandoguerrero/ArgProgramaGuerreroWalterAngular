@@ -14,7 +14,7 @@ expe: Experiencia[]=[];
 constructor(private sExperiencia: SExperienciaService) { }//variable de tipo servicio
 
   ngOnInit(): void {
-    this.cargarExperiencia();//metodo al inicio de la carga del programa
+    this.cargarExperiencia();//metodo al inicio de la carga del componente
   }
   //funcion disparadora de lista a mi componente
   cargarExperiencia(): void { //lista es el metodo que busca en la Bd

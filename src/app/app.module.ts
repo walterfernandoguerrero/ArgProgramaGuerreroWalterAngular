@@ -23,6 +23,12 @@ import { LogoArgProgComponent } from './componentes/logo-arg-prog/logo-arg-prog.
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { CirculoValoracionComponent } from './componentes/circulo-valoracion/circulo-valoracion.component';
 import { EditarPerfilComponent } from './componentes/encabezado/editar-perfil/editar-perfil.component';
+import { EditarInfoComponent } from './componentes/acerca-de/editar-info/editar-info.component';
+import { EditarExperienciaComponent } from './componentes/experiencia/editar-experiencia/editar-experiencia.component';
+//import { NuevaEducacionComponent } from './componentes/proyectos/nueva-educacion/nueva-educacion.component';
+import { NuevoProyectoComponent } from './componentes/proyectos/nuevo-proyecto/nuevo-proyecto.component';
+import { EditarProyectoComponent } from './componentes/proyectos/editar-proyecto/editar-proyecto.component';
+import { CirculoLogrosComponent } from './componentes/circulo-logros/circulo-logros.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +49,13 @@ import { EditarPerfilComponent } from './componentes/encabezado/editar-perfil/ed
     EditarEducacionComponent,
     LogoArgProgComponent,
     CirculoValoracionComponent,
-    EditarPerfilComponent
+    EditarPerfilComponent,
+    EditarInfoComponent,
+    EditarExperienciaComponent,
+    //NuevaEducacionComponent,
+    NuevoProyectoComponent,
+    EditarProyectoComponent,
+    CirculoLogrosComponent
   ],
   imports: [
     BrowserModule,

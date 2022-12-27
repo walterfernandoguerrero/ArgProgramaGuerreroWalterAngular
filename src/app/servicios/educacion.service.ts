@@ -31,9 +31,7 @@ public save(educacion: Educacion): Observable<any>{
   return this.httpClient.post<any>(this.eduURL+'crearEstudio', educacion);
 }
 
-//falta update
-
-//borrr
+//borrar
 public delete(id: number): Observable<any>{
   return this.httpClient.delete<any>(this.eduURL+`delete/${id}`)
 }

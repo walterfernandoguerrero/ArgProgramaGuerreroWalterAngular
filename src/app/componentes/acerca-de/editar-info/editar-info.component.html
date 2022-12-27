@@ -1,0 +1,44 @@
+<p>editar-info works!</p>
+<app-logo-arg-prog></app-logo-arg-prog>
+<div class="container">
+    <div class="row" >
+        <div>
+            <form  novalidate="ngForm" (ngSubmit)="onCreate()">
+                <div class="form-group">
+                    <label for="desc1" style="color:white;">Parrafo 1:</label>
+                    <textarea name="desc1" id="desc1" cols="50" rows="3"  class="form-control" [(ngModel)]="info.desc1" required>
+                    {{info.desc1}}
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="desc2" style="color:white;">Parrafo 2:</label>
+                    <textarea name="desc2" id="desc2" cols="50" rows="3"  class="form-control" [(ngModel)]="info.desc2" required>
+                    {{info.desc2}}
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="desc3" style="color:white;">Parrafo 3:</label>
+                    <textarea name="desc3" id="desc3" cols="50" rows="3"  class="form-control" [(ngModel)]="info.desc3" required>
+                    {{info.desc3}}
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="desc4" style="color:white;">Parrafo 4:</label>
+                    <textarea name="desc4" id="desc1" cols="50" rows="3"  class="form-control" [(ngModel)]="info.desc4" required>
+                    {{info.desc4}}
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="desc5" style="color:white;">Parrafo 5:</label>
+                    <textarea name="desc5" id="desc1" cols="50" rows="3"  class="form-control" [(ngModel)]="info.desc5" required>
+                    {{info.desc5}}
+                    </textarea>
+                </div>
+                <!--boton-->
+                <button class="btn btn-success" >
+                    Editar mi Informacion
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -28,4 +28,10 @@ export class SExperienciaService {
   public delete(id: number): Observable<any>{
     return this.httpClient.delete<any>(this.expURL+`borrarExperiencia/${id}`);
   }
+
+  //traer una experiencia 
+  public detail(id: number): Observable<Experiencia>{
+    return this.httpClient.get<Experiencia>(this.expURL+`traerExperiencia/${id}`);
+
+}
 }

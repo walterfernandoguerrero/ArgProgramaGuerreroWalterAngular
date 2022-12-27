@@ -22,14 +22,14 @@
     <!--prueva de servicio-->
     <div class="row">
         <div class="col lg 1">
-            <h2 style="text-align:center ;">EXPRIENCIA LABORAL</h2>
+            <h2 style="text-align:center ;">EXPERIENCIA LABORAL</h2>
             <div class="col-lg-10">
                 <table class="table">
                     <tbody>
                         <tr *ngFor="let Experiencia of expe">
                            <td>{{Experiencia.nombreExp}}</td>
                            <td>{{Experiencia.descripcionExp}}</td>
-                           <td><button class="btn btn-success">Editar</button></td>
+                           <td><button class="btn btn-success" routerLink="/pagEditExpe/{{Experiencia.id}}">Editar</button></td>
                            <td><button class="btn btn-success" (click)="delete(Experiencia.id)">Borrar</button></td>
                         </tr>
                     </tbody>
