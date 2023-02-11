@@ -9,7 +9,7 @@
 
     <!--prueva de servicio-->
     <div class="botonDerecha">
-        <button class="btn btn-success" routerLink="/pagNuevEdu">
+        <button *ngIf="autorizado()" class="btn btn-success" routerLink="/pagNuevEdu">
             Agregar Nuevo Estudio
         </button>
         
@@ -23,10 +23,10 @@
                         <tr *ngFor="let educacion of edu">
                            <td>{{educacion.nombreEdu}}</td>
                            <td>{{educacion.descripcionEdu}}</td>
-                           <td><button class="btn btn-success" routerLink="/pagEditEdu/{{educacion.id}}">
+                           <td><button *ngIf="autorizado()" class="btn btn-success" routerLink="/pagEditEdu/{{educacion.id}}">
                             Editar
                             </button></td>
-                           <td><button class="btn btn-success" (click)="borrar(educacion.id)">
+                           <td><button *ngIf="autorizado()" class="btn btn-success" (click)="borrar(educacion.id)">
                                 Borrar
                             </button></td>
                         </tr>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Proyecto } from 'src/app/model/proyecto';
+import { LoginEdicionService } from 'src/app/servicios/login-edicion.service';
 import { ProyectoService } from 'src/app/servicios/proyecto.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { ProyectoService } from 'src/app/servicios/proyecto.service';
 export class ProyectosComponent implements OnInit {
 proy: Proyecto[]=[];
 
-  constructor(private proyServi: ProyectoService) { }
+  constructor(private proyServi: ProyectoService, private estaLogeado:LoginEdicionService) { }
 
   ngOnInit(): void {
     this.cargarProyectos();
@@ -34,5 +35,10 @@ proy: Proyecto[]=[];
       )
     }
   }
+
+  //prueba de validacion++++++++++++++++++++++++++++++++++
+  autorizado():boolean{
+    return this.estaLogeado.habilitarEdicion();
+    } 
 
 }

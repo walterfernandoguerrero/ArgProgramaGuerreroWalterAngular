@@ -14,7 +14,7 @@
 </div>  
 
     <div class="botonDerecha">
-        <button class="btn btn-success" routerLink="/paginaExp">
+        <button *ngIf="autorizado()" class="btn btn-success" routerLink="/paginaExp">
             Agregar Nueva Experiencia
         </button>
         
@@ -29,8 +29,8 @@
                         <tr *ngFor="let Experiencia of expe">
                            <td>{{Experiencia.nombreExp}}</td>
                            <td>{{Experiencia.descripcionExp}}</td>
-                           <td><button class="btn btn-success" routerLink="/pagEditExpe/{{Experiencia.id}}">Editar</button></td>
-                           <td><button class="btn btn-success" (click)="delete(Experiencia.id)">Borrar</button></td>
+                           <td><button *ngIf="autorizado()" class="btn btn-success" routerLink="/pagEditExpe/{{Experiencia.id}}">Editar</button></td>
+                           <td><button *ngIf="autorizado()" class="btn btn-success" (click)="delete(Experiencia.id)">Borrar</button></td>
                         </tr>
                     </tbody>
                    </table>

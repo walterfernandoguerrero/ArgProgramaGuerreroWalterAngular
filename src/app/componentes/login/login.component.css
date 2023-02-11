@@ -1,0 +1,32 @@
+.contenedor{
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    width: 300px;
+    
+}
+input{
+    display: block;
+    margin-bottom: 30px;
+}
+#usuario{
+    padding: 20px;
+    width: 100%;
+}
+#pasw{
+    padding: 20px;
+    width: 100%;
+
+}
+.botonMio{
+    width: 100%;
+    height: 50px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    
+}
+label{
+    color: white;
+}

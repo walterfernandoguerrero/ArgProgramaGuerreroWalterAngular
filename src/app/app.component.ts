@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginEdicionService } from './servicios/login-edicion.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'walterAngular11';
+
+  constructor(private loginEd: LoginEdicionService){}
+
+  public verMenuEdicion():boolean{
+    return this.loginEd.habilitarEdicion()
+  }
+
 }

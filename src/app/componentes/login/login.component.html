@@ -1,8 +1,21 @@
-<div style="color: red;">
-    <h1>
-        login works!
-        <button type="button" class="btn btn-outline-ligth" >login</button>
-    </h1>
+<app-logo-arg-prog></app-logo-arg-prog>
+<div  class="contenedor" >
+    <form  [formGroup]="myForm" (ngSubmit)="submitFormulario()">
+        <div>
+        <label for="usuario">Usuario</label>
+        <input formControlName="usuario"  type="text" id="usuario" name="usuario">
+        </div> 
+        
+        <div>
+            <label for="pasw">Contraseña</label>
+            <input formControlName="password" type="text" id="pasw" name="pasw">
+        </div>
+       
+        <div>
+            <input type="submit" class=" botonMio btn btn-outline-ligth" value="LOGIN">
+        </div>
 
+    </form>
+    
 </div>
 

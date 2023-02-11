@@ -6,7 +6,7 @@
     </ul>
    <!--prueva de servicio-->
    <div class="botonDerecha">
-        <button class="btn btn-success" routerLink="/pagNuevoProy">
+        <button *ngIf="autorizado()" class="btn btn-success" routerLink="/pagNuevoProy">
             NUEVO PROYECTO
         </button>
     </div>
@@ -22,19 +22,19 @@
                         <td>Herramientas:</td>
                         <td>Detalle:</td>
                         <td>Git:</td>
-                        <td>Edit:</td>
-                        <td>Delete:</td>
+                        <td *ngIf="autorizado()">Edit:</td>
+                        <td *ngIf="autorizado()">Delete:</td>
                     </tr>
                     <tr *ngFor="let proyecto of proy">
                        <td>{{proyecto.titulo}}</td>
                        <td>{{proyecto.lenguaje}}</td>
                        <td>{{proyecto.herramientas}}</td>
                        <td>{{proyecto.detalle}}</td>
-                       <td>{{proyecto.git}}</td>
-                       <td><button class="btn btn-success" routerLink="pagEditProy/{{proyecto.id}}">
+                       <td><a href="{{proyecto.git}}">{{proyecto.git}}</a></td>
+                       <td><button *ngIf="autorizado()" class="btn btn-success" routerLink="pagEditProy/{{proyecto.id}}">
                             Editar
                         </button></td>
-                       <td><button class="btn btn-success" (click)="delete(proyecto.id)">
+                       <td><button *ngIf="autorizado()" class="btn btn-success" (click)="delete(proyecto.id)">
                             Borrar
                         </button></td>
                     </tr>

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { persona } from 'src/app/model/persona.model';
+import { LoginEdicionService } from 'src/app/servicios/login-edicion.service';
+import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
   selector: 'app-login',
@@ -8,14 +12,58 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router:Router ) { }
+  //variables
+  public myForm: FormGroup;
+  public listaUsuarios:persona[]= [];
+
+  constructor(private svPer:PersonaService  ,private router:Router, private fb:FormBuilder, private validarUsuario: LoginEdicionService ) { }
 
   ngOnInit(): void {
+    this.myForm=this.createMyForm();
+    this.cargarUsuarios();
+    
+  }
+//funcion
+  private createMyForm():FormGroup{
+    //fb puede ser vacio o con datos para el formuulario de login
+    return this.fb.group({
+      usuario:[''],
+      password:['']
+    });
   }
 
+  public submitFormulario(){
+    //alert("se envia formulario");
+    console.log(this.myForm.value);
+    console.log(this.listaUsuarios);
+    if(!this.validarUsuario.ingresarDatos(this.myForm.value, this.listaUsuarios)){ //aqui se llena el objeto del formulario
+      alert('no son validos usuario y clave no podra editar el porfolio solo leer');
+      //this.login();
+      this.principal();//prueba
+    }
+    else{
+      alert('usuario y clave correctos esta autorizado a editar el formulario');
+      this.principal();
+    }
+    
+  }
+  
   login(){
 
-    this.router.navigate(['/login'])
+    this.router.navigate(['/login'])//para ir al componente
+  }
+
+  principal(){
+    this.router.navigate(['']); //para volver al principio de la pagina 
+  }
+
+  public get f():any{
+    return this.myForm.controls; //no lo uso es para bootstrap
+  }
+
+  cargarUsuarios(): void {
+    this.svPer.lista().subscribe(data =>{this.listaUsuarios=data})
+
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/model/experiencia';
+import { LoginEdicionService } from 'src/app/servicios/login-edicion.service';
 import { SExperienciaService } from 'src/app/servicios/s-experiencia.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class ExperienciaComponent implements OnInit {
 //traer el model
 expe: Experiencia[]=[];
  //agregar al constructor el servicio
-constructor(private sExperiencia: SExperienciaService) { }//variable de tipo servicio
+constructor(private sExperiencia: SExperienciaService, private estaLogeado: LoginEdicionService) { }//variable de tipo servicio
 
   ngOnInit(): void {
     this.cargarExperiencia();//metodo al inicio de la carga del componente
@@ -34,5 +35,10 @@ constructor(private sExperiencia: SExperienciaService) { }//variable de tipo ser
       )
     }
   }
+
+   //prueba de validacion++++++++++++++++++++++++++++++++++
+   autorizado():boolean{
+    return this.estaLogeado.habilitarEdicion();
+    } 
 
 }

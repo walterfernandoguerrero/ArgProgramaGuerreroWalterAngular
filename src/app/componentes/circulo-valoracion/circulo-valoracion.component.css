@@ -1,3 +1,7 @@
 .row{
-    padding: 20px;
+    padding: 0px;
+    margin: 30px;
+}
+.miBoton{
+    transform: translateX(50%);
 }

@@ -11,6 +11,6 @@
         <p>{{info.desc5}}</p>
     </div>
     <div class="botonDerecha">
-        <button class="btn btn-success" routerLink="/pagEditInfo/:{{info.id}}">Editar mi Información</button>
+        <button *ngIf="autorizado()" class="btn btn-success" routerLink="/pagEditInfo/:{{info.id}}">Editar mi Información</button>
     </div> 
 </div>

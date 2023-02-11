@@ -1,0 +1,20 @@
+<app-logo-arg-prog></app-logo-arg-prog>
+<div class="container">
+    <div class="row" >
+        <div>
+            <form (ngSubmit)="onCreate()" novalidate="ngForm">
+                <div class="form-group">
+                    <label for="nombreLenguje" style="color:white;">LENGUAJE:</label>
+                    <input type="text" class="form-control" id="nombreLeguaje" name="nombreLenguaje" [(ngModel)]="lenguaje.nombreLenguaje" required disabled>
+                </div>
+                <div class="form-group">
+                    <label for="porcentaje" style="color:white;">PORCENTAJE:</label>
+                    <input type="text" class="form-control" id="descripcionEdu" name="descripcionEdu" [(ngModel)]="lenguaje.porcentaje" required>
+                </div>
+                <button class="btn btn-success" >
+                    Editar Lenguaje
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

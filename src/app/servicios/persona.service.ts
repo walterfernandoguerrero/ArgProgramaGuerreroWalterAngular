@@ -14,4 +14,9 @@ URL = 'http://localhost:8080/';
   public getPersona(): Observable<persona>{
     return this.http.get<persona>(this.URL + 'traer/perfil' );
   }
+
+  //traer lista de mis datos de personas
+public lista():Observable<persona[]>{
+  return this.http.get<persona[]>(this.URL+'ver/personas');//es un vector la  tabla de personas
+}
 }

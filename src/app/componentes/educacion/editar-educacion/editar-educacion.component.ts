@@ -21,7 +21,7 @@ educacion: any= new Educacion('','');
         this.educacion = data;
         console.log(data); 
       }, err =>{
-        alert("Error al modifiacar");
+        alert("Error al Cargar los Datos");
         this.router.navigate(['']);
       }
     )

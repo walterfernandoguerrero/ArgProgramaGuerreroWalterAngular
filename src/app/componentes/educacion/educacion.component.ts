@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/servicios/educacion.service';
+import { LoginEdicionService } from 'src/app/servicios/login-edicion.service';
 
 @Component({
   selector: 'app-educacion',
@@ -10,7 +11,7 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 export class EducacionComponent implements OnInit {
 //traer la clase modelo
 edu: Educacion[]=[];
-  constructor(private servEducacion: EducacionService) { }
+  constructor(private servEducacion: EducacionService, private estaLogeado:LoginEdicionService) { }
 
   ngOnInit(): void {
     //llamo a mi metodo al inicio del componente
@@ -33,5 +34,11 @@ edu: Educacion[]=[];
       )
     }
   }
+
+  //prueba de validacion++++++++++++++++++++++++++++++++++
+  autorizado():boolean{
+  return this.estaLogeado.habilitarEdicion();
+  } 
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 }
