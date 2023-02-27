@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Lenguajes } from 'src/app/model/lenguajes';
 import { LenguajeService } from 'src/app/servicios/lenguaje.service';
@@ -9,7 +10,17 @@ import { LenguajeService } from 'src/app/servicios/lenguaje.service';
   styleUrls: ['./editar-lenguaje.component.css']
 })
 export class EditarLenguajeComponent implements OnInit {
-  lenguaje:any =new Lenguajes('',null);
+ 
+  //validar datos
+//prueba de validacion de campos en formulario ++++++++++
+  lenguajeCtrl= new FormControl('',[Validators.required]);
+  porcentajeCtrl = new FormControl('',[Validators.required, Validators.pattern(/^[0-9\d]{1,2}$/)]);
+  imajenCtrl = new FormControl('',[Validators.required]);
+//+++++++++++++++++++++++++++++++++++++++++++++++++++
+  
+  lenguaje:any =new Lenguajes('',null,'');
+  
+  
   constructor(private lengServ: LenguajeService, private activatedRouter: ActivatedRoute,
      private router:Router) { }
 
@@ -31,6 +42,7 @@ export class EditarLenguajeComponent implements OnInit {
      this.lengServ.details(id).subscribe(
        data =>{
          this.lenguaje = data;
+         console.log(data);
        }
      )
      this.lengServ.save(this.lenguaje).subscribe(
@@ -40,5 +52,7 @@ export class EditarLenguajeComponent implements OnInit {
        }
      )
    }
+
+  
 
 }

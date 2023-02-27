@@ -22,7 +22,7 @@ export class LoginEdicionService {
     
     
     //pruebas de logeo
-    this.miUsuario=obj.usuario;
+    this.miUsuario=obj.usuario;//esta variable se llena del input del formulario
     console.log(this.miUsuario);
     
     this.misPersonas=x;
@@ -30,7 +30,7 @@ export class LoginEdicionService {
    
     this.miClave=obj.password;
     for(let elemento of this.misPersonas){
-      if(elemento.nombre === this.miUsuario && elemento.apellido === this.miClave){
+      if(elemento.usuario === this.miUsuario && elemento.password === this.miClave){
         this.ingresar=true;
         break;
       }

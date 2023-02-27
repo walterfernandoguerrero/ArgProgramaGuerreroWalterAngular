@@ -12,6 +12,10 @@ import { LoginEdicionService } from 'src/app/servicios/login-edicion.service';
 export class CirculoValoracionComponent implements OnInit {
 
   misLenguajes: Lenguajes[]=[];
+
+
+
+
   constructor(private lengServ:LenguajeService, private estaLogeado:LoginEdicionService, private router:Router) { }
 
   ngOnInit(): void {

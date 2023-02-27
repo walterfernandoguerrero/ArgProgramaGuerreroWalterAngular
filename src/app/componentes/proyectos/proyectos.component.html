@@ -30,7 +30,7 @@
                        <td>{{proyecto.lenguaje}}</td>
                        <td>{{proyecto.herramientas}}</td>
                        <td>{{proyecto.detalle}}</td>
-                       <td><a href="{{proyecto.git}}">{{proyecto.git}}</a></td>
+                       <td><a href="{{proyecto.git}}" target="_blank" rel="noopener noreferrer" style="color: white;">{{proyecto.git}}</a></td>
                        <td><button *ngIf="autorizado()" class="btn btn-success" routerLink="pagEditProy/{{proyecto.id}}">
                             Editar
                         </button></td>

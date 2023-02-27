@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia';
 import { SExperienciaService } from 'src/app/servicios/s-experiencia.service';
@@ -12,6 +13,13 @@ export class NuevaExperienciaComponent implements OnInit {
 nombreExp: string ='';
 descripcionExp: string ='';
 
+//prueba de validacion de campos en formulario ++++++++++
+empresaCtrl= new FormControl('',[Validators.required]);
+puestoCtrl = new FormControl('',[Validators.required]);
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
   constructor(private sExperiencia: SExperienciaService, private router: Router) { }
 
   ngOnInit(): void {
@@ -22,7 +30,7 @@ descripcionExp: string ='';
     this.sExperiencia.crearExperiencia(expe).subscribe(data =>{
       alert("se creo nueva experiencia");
       this.router.navigate(['']);
-    },err =>{
+    },Error =>{
       alert('no se pudo crear');
       this.router.navigate(['']);
     }

@@ -1,3 +1,10 @@
+.img-educacion{
+    float: left; 
+    width: 70px; 
+    border-radius: 15px;
+    margin-top: -3px;
+    border: solid 5px red;
+}
 @media screen and (max-width: 995px) {
     table {
         width:100%;

@@ -6,7 +6,7 @@
         [radius]="100"
         [title]="(leng.nombreLenguaje)"
         [showTitle]="true"
-        [imageSrc]="dibujo(leng.nombreLenguaje)"
+        [imageSrc]="(leng.urlImagen)"
         [showImage]="true"
         [imageHeight]="70"
         [imageWidth]="70"
@@ -17,6 +17,10 @@
         [animation]="true"
         [animationDuration]="300"
         ></circle-progress>
+        <div>
+            <p>{{leng.nombreLenguaje}}</p>
+            <p>{{leng.porcentaje}}%</p>
+        </div>
         <div>
             <button class="btn btn-success miBoton" *ngIf="autorizado()" routerLink="/pagEditLenguaje/{{leng.id}}">Editar</button>
         </div>

@@ -12,7 +12,7 @@ import { LoginEdicionService } from 'src/app/servicios/login-edicion.service';
 })
 export class EncabezadoComponent implements OnInit {
 
-  //para logerame
+  //para logearme
   loginValido:boolean = false;//*********
 
   datos: DatosPersonales = new DatosPersonales (" "," "," "," "," ");
