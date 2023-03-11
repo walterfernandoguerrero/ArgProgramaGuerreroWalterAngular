@@ -27,9 +27,10 @@ edu: Educacion[]=[];
     if(id!=undefined){
       this.servEducacion.delete(id).subscribe(
         data =>{
+          alert("Se elimino item de educacion");
           this.cargarEducacion();
         }, err =>{
-          alert("no se pudo eliminar")
+          alert("no se pudo eliminar");
         }
       )
     }

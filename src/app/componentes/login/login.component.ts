@@ -33,13 +33,12 @@ export class LoginComponent implements OnInit {
   }
 
   public submitFormulario(){
-    //alert("se envia formulario");
+    
     console.log(this.myForm.value);
-    console.log(this.listaUsuarios);
+    //console.log(this.listaUsuarios);
     if(!this.validarUsuario.ingresarDatos(this.myForm.value, this.listaUsuarios)){ //aqui se llena el objeto del formulario
       alert('no son validos usuario y clave no podra editar el porfolio solo leer');
-      //this.login();
-      this.principal();//prueba
+      this.principal();//vuelvo al pagina principal
     }
     else{
       alert('usuario y clave correctos esta autorizado a editar el formulario');
@@ -57,13 +56,21 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['']); //para volver al principio de la pagina 
   }
 
-  public get f():any{
-    return this.myForm.controls; //no lo uso es para bootstrap
-  }
-
   cargarUsuarios(): void {
     this.svPer.lista().subscribe(data =>{this.listaUsuarios=data})
 
   }
+
+  verClave(){
+    let elemento: any = document.getElementById('pasw');
+     if(elemento.type=='password')
+     {
+       elemento.type = 'text';
+     }
+     else
+     {
+       elemento.type='password';
+     }
+   }
 
 }

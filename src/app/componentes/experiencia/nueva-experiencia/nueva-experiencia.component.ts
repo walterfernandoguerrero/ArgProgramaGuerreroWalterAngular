@@ -16,7 +16,6 @@ descripcionExp: string ='';
 //prueba de validacion de campos en formulario ++++++++++
 empresaCtrl= new FormControl('',[Validators.required]);
 puestoCtrl = new FormControl('',[Validators.required]);
-
 //+++++++++++++++++++++++++++++++++++++++++++++++++++
 
 

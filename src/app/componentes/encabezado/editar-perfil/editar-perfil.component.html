@@ -1,4 +1,3 @@
-<p>Cambiar mi Perfil</p>
 <app-logo-arg-prog></app-logo-arg-prog>
 <div class="container">
     <div class="row" >
@@ -6,28 +5,82 @@
             <form (ngSubmit)="onCreate()" novalidate="ngForm">
                 <div class="form-group">
                     <label for="nombre" style="color:white;">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="perfil.nombre" required>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="perfil.nombre" required  [formControl]="nombreCtrl">
+                    <p>
+                        <small *ngIf="nombreCtrl.hasError('required') && nombreCtrl.dirty">
+                            <img src="/assets/warning.png" alt="error"> el campo es requerido 
+                        </small>
+                   </p>
+                   <p>
+                        <small *ngIf="nombreCtrl.hasError('pattern')">
+                            <img src="/assets/warning.png" alt="error">minimo 3 caracteres y maximo 40 solo letras 
+                        </small>
+                    </p>
                 </div>
+
                 <div class="form-group">
                     <label for="mail" style="color:white;">Mail:</label>
-                    <input type="text" class="form-control" id="mail" name="mail" [(ngModel)]="perfil.mail" required>
+                    <input type="text" class="form-control" id="mail" name="mail" [(ngModel)]="perfil.mail" required [formControl]="correoCtrl">
+                    <p>
+                        <small *ngIf="correoCtrl.hasError('required') && correoCtrl.dirty">
+                            <img src="/assets/warning.png" alt="error">el campo es requerido
+                        </small>
+                   </p>
+                   <p>
+                        <small *ngIf="correoCtrl.hasError('pattern')">
+                            <img src="/assets/warning.png" alt="error"> no es formato de correo valido
+                        </small>
+                    </p>
                 </div>
 
                 <div class="form-group">
                     <label for="telefono" style="color:white;">Telefono:</label>
-                    <input type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="perfil.telefono" required>
+                    <input type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="perfil.telefono" required [formControl]="telefonoCtrl">
+                    <p>
+                        <small *ngIf="telefonoCtrl.hasError('required') && telefonoCtrl.dirty">
+                            <img src="/assets/warning.png" alt="error"> el campo es requerido
+                        </small>
+                   </p>
+                   <p>
+                        <small *ngIf="telefonoCtrl.hasError('pattern')">
+                            <img src="/assets/warning.png" alt="error">no es formato no es valido solo numeros, 8 a 14 caracteres.
+                        </small>
+                    </p>
+
                 </div>
 
                 <div class="form-group">
                     <label for="direccion" style="color:white;">Dirección:</label>
-                    <input type="text" class="form-control" id="direccion" name="direccion" [(ngModel)]="perfil.direccion" required>
+                    <input type="text" class="form-control" id="direccion" name="direccion" [(ngModel)]="perfil.direccion" required [formControl]="direccionCtrl">
+                    <p>
+                        <small *ngIf="direccionCtrl.hasError('required') && direccionCtrl.dirty">
+                            <img src="/assets/warning.png" alt="error">el campo es requerido
+                        </small>
+                   </p>
+                   <p>
+                        <small *ngIf="direccionCtrl.hasError('pattern')">
+                            <img src="/assets/warning.png" alt="error"> maximo 100 caracteres sin caracteres especiales (ej: &%/).
+                        </small>
+                    </p>
+                
                 </div>
                 <div class="form-group">
                     <label for="imagen" style="color:white;">URLimagen:</label>
-                    <input type="text" class="form-control" id="imagen" name="imagen" [(ngModel)]="perfil.imagen" required>
+                    <input type="text" class="form-control" id="imagen" name="imagen" [(ngModel)]="perfil.imagen" required [formControl]="imagenCtrl">
+               
+                    <p>
+                        <small *ngIf="imagenCtrl.hasError('required') && imagenCtrl.dirty">
+                            <img src="/assets/warning.png" alt="error">... el campo es requerido ...
+                        </small>
+                   </p>
+                   <p>
+                        <small *ngIf="imagenCtrl.hasError('pattern')">
+                            <img src="/assets/warning.png" alt="error">... admite de 4 a 250 caracteres...
+                        </small>
+                    </p>
                 </div>
 
-                <button class="btn btn-success" >
+                <button [disabled]="nombreCtrl.invalid || correoCtrl.invalid || telefonoCtrl.invalid || direccionCtrl.invalid || imagenCtrl.invalid" class="btn btn-success" >
                     Editar Estudio
                 </button>
             </form>

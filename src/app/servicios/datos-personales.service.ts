@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { DatosPersonales } from '../model/datos-personales';
 
 @Injectable({
@@ -8,12 +9,12 @@ import { DatosPersonales } from '../model/datos-personales';
 })
 export class DatosPersonalesService {
   
-  URL = 'http://localhost:8080/datos/';
+  URL = environment.apiURL + 'datos/';
 
   constructor(private http: HttpClient ) {}
 //traer datos
 public getDatos(): Observable<DatosPersonales>{
-   return this.http.get<DatosPersonales>(this.URL + `traerDatos/${27}`);
+   return this.http.get<DatosPersonales>(this.URL + `traerDatos/${27}`);//es el id de la tabla tener en cuenta en deploy
 }
 //traer un dato
 public detail(id:number): Observable<DatosPersonales>{

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia';
 import { SExperienciaService } from 'src/app/servicios/s-experiencia.service';
@@ -9,6 +10,12 @@ import { SExperienciaService } from 'src/app/servicios/s-experiencia.service';
   styleUrls: ['./editar-experiencia.component.css']
 })
 export class EditarExperienciaComponent implements OnInit {
+  
+  //validaciones
+  empresaCtrl= new FormControl('',[Validators.required]);
+  puestoCtrl = new FormControl('',[Validators.required]);
+  //----
+
   expe: any = new Experiencia('','');
   constructor(private expServi: SExperienciaService, private actRouter:ActivatedRoute,
     private router: Router) { }
@@ -25,7 +32,7 @@ export class EditarExperienciaComponent implements OnInit {
         this.expe = data;
         console.log(data); 
       }, err =>{
-        alert("Error al modifiacar");
+        alert("Error al modificar");
         this.router.navigate(['']);
       }
     )

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/servicios/educacion.service';
@@ -9,6 +10,13 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
   styleUrls: ['./editar-educacion.component.css']
 })
 export class EditarEducacionComponent implements OnInit {
+
+  //validacion forms
+  establecimientoCtrl= new FormControl('',[Validators.required]);
+  tituloCtrl = new FormControl('',[Validators.required]);
+  //-----
+
+
 educacion: any= new Educacion('','');
 
   constructor(private servEducacion: EducacionService, private activatedRouter: ActivatedRoute,

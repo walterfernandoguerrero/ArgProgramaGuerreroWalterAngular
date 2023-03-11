@@ -9,24 +9,31 @@
                 </div>
                 <div class="form-group">
                     <label for="porcentaje" style="color:white;">PORCENTAJE:</label>
-                    <input type="text" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="lenguaje.porcentaje" required [formControl]="porcentajeCtrl">
+                    <input type="text" class="form-control" id="porcentaje" name="porcentaje"
+                     [(ngModel)]="lenguaje.porcentaje" required [formControl]="porcentajeCtrl">
                     <p>
                         <small *ngIf="porcentajeCtrl.hasError('required') && porcentajeCtrl.dirty">
-                             ..Este campo es requerido no puede estar vacio............
+                            <img src="/assets/warning.png" alt="error">...Este campo es requerido no puede estar vacio...
                         </small>
                     </p>
                     <p>
                         <small *ngIf="porcentajeCtrl.hasError('pattern') && porcentajeCtrl.dirty">
-                            ....debe ingresar valores numericos entre 0 y 99 para porcentajes de aprendizaje......
+                            <img src="/assets/warning.png" alt="error">...debe ingresar valores numericos entre 0 y 99 para porcentajes de aprendizaje...
                         </small>
                     </p>
                 
                 </div>
                 <div class="form-group">
                     <label for="imagen" style="color:white;">IMAGEN:</label>
-                    <input type="text" class="form-control" id="imagen" name="descripcionEdu" [(ngModel)]="lenguaje.urlImagen" required>
+                    <input type="text" class="form-control" id="imagen" name="descripcionEdu"
+                     [(ngModel)]="lenguaje.urlImagen" required [formControl]="imagenCtrl">
+                     <p>
+                        <small *ngIf="imagenCtrl.hasError('required') && imagenCtrl.dirty">
+                            <img src="/assets/warning.png" alt="error">...Este campo es requerido no puede estar vacio...
+                        </small>
+                    </p>
                 </div>
-                <button [disabled]="porcentajeCtrl.invalid" class="btn btn-success"  >
+                <button [disabled]="porcentajeCtrl.invalid || imagenCtrl.invalid" class="btn btn-success"  >
                     Editar Lenguaje
                 </button>
             </form>

@@ -18,9 +18,6 @@ export class LoginEdicionService {
 
   //funcion de verificacion de datos correctos
   public ingresarDatos(obj:any, x:persona[]):boolean{
-    //return this.ingresar = obj.usuario == this.miUsuario && obj.password == this.miClave;//++++++++++++++
-    
-    
     //pruebas de logeo
     this.miUsuario=obj.usuario;//esta variable se llena del input del formulario
     console.log(this.miUsuario);
@@ -49,13 +46,7 @@ export class LoginEdicionService {
   }
   //para borrar la edicion valida 
   public deshabilitar(){
-    this.ingresar=false; //prueba de dasabilitar usuario??
+    this.ingresar=false; //prueba de desabilitar usuario??
   }
-
-  
-
- 
-
-
 
 }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { Experiencia } from '../model/experiencia';
 
 @Injectable({
@@ -8,9 +9,8 @@ import { Experiencia } from '../model/experiencia';
 })
 export class SExperienciaService {
   //variable para el path
-  expURL = 'http://localhost:8080/explab/'
-
-              //variable 
+  expURL = environment.apiURL +'explab/';
+  
   constructor(private httpClient: HttpClient) { }
 
   //metodos

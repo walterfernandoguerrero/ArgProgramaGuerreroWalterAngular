@@ -4,34 +4,39 @@
     <header id="borde-header" class="page-header">
       <div id="login">
         
-          <img id="foto-login" class="imagenApertura" src="{{datos.imagen}}" alt="foto-login" *ngIf="loginValido">
+          <img src="/assets/arg-programa.png" alt="logo" width="180px">
+
+        <button style="float: right;" class="btn btn-success" (click)="login()" *ngIf="!loginValido"> EDITAR DATOS</button>
+        <button class="btn btn-success" (click)="cerrarSesion()" *ngIf="loginValido">ANULAR EDICION</button>
+        <img id="foto-login" class="imagenApertura" src="{{datos.imagen}}" alt="foto-login" *ngIf="loginValido">
           <p style="font-style: italic; color:white; padding: 10px; font-size:smaller;" *ngIf="loginValido" >
-            ...Puede Editar los Datos del Porfolio ¡¡
-            </p>
-        <button class="btn btn-success" (click)="login()" *ngIf="!loginValido">HABILITAR SESION DE EDICION</button>
-        <button class="btn btn-success boton-naranja" (click)="cerrarSesion()" *ngIf="loginValido">SALIR DE SESION</button>
-          
-          <ul id="ul-arriba" class="nav nav-pills pull-right">
-            <li><a href="#"><img src="/assets/logos-redes/in.png" alt="Linkedin" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
-            <li><a href="#"><img src="/assets/logos-redes/facebook.png" alt="facebook" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
-            <li> <a href="#"><img src="/assets/logos-redes/youtube.png" alt="youtube" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
-            <li> <a href="#"><img src="/assets/logos-redes/git.png" alt="github" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
-        </ul>
-      </div>
-        <div id="contenedor-imagen" >
-              <div id="imagen-unida">
-                <img id="fotoPerfil"  src="{{datos.imagen}}" alt="foto de perfil">
-                <img  class="foto-pc " src="https://sursantiago.com.ar/wp-content/uploads/2022/02/argentina-programa-llego-a-los-santiaguenos.jpg" alt=" imagen arg Programa">
-              </div>
+            <img src="/assets/logos-redes/lapis.png" alt="lapis" style="width: 52px; height: 52px; border-radius: 50%;">.Habilitado para Editar¡¡
+          </p> 
+            <div id="cuadro">
+              <ul id="ul-arriba" class="nav nav-pills">
+                <li><a href="https://www.linkedin.com/in/walter-fernando-guerrero-212548236/" target="_blank"><img src="/assets/logos-redes/in.png" alt="Linkedin" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
+                <li><a href="https://www.facebook.com/walterfernando.guerrero" target="_blank"><img src="/assets/logos-redes/facebook.png" alt="facebook" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
+                <li> <a href="https://www.youtube.com/channel/UCGGIaWhQNCfqI3imsLu8CvQ" target="_blank"><img src="/assets/logos-redes/youtube.png" alt="youtube" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
+                <li> <a href="https://github.com/walterfernandoguerrero" target="_blank"><img src="/assets/logos-redes/git.png" alt="github" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
+                <li> <a href="https://discord.com/channels/@me" target="_blank"><img src="/assets/logos-redes/discord.jpg" alt="discord" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
+                <li> <a href="https://www.instagram.com/guerrerowalterfernando/" target="_blank"><img src="/assets/logos-redes/instagram.png" alt="instagram" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
+              </ul>
+            </div>
+              <div id="contenedor-imagen" >
+                <div id="imagen-unida">
+                  <img id="fotoPerfil"  src="{{datos.imagen}}" alt="foto de perfil">
+                  <img  class="foto-pc " src="https://sursantiago.com.ar/wp-content/uploads/2022/02/argentina-programa-llego-a-los-santiaguenos.jpg" alt=" imagen arg Programa">
+                </div>
+            </div>
         </div>
         
       <div>
-            <h1 style="color: white; text-align: center;">{{datos.nombre}}</h1>
+            <h1 style="color: white; text-align: center;">{{datos.nombre|uppercase}}</h1>
       </div>      
       <div id="datosPersonales">
             <hr>
             <p>{{datos.mail}}</p>
-            <p>{{datos.telefono}}</p>
+            <p>ARG +54  {{datos.telefono}}</p>
             <p>{{datos.direccion}}</p>
             <div class="botonDerecha">
               <button class="btn btn-success" *ngIf="loginValido"   routerLink="/pagEditPerfil/:{{datos.id}}" >Editar mi Perfil</button>
@@ -40,15 +45,12 @@
       <div>
         <hr>
         <ul id="ul-abajo" class="nav nav-pills pull-right">
-           <!-- <li><a href="#"><img src="/assets/logos-redes/linkedin.png" alt="Linkedin" style="width: 30px; height: 30px; border-radius: 50%;">Linkedin</a></li>
-            <li class="active"> <a href="#">Facebook</a></li>
-            <li> <a href="#">Youtube</a></li>
-            <li> <a href="#">Git Hub</a></li>
-            //prueba de iconos de redes ########-->
-            <li><a href="#"><img src="/assets/logos-redes/in.png" alt="Linkedin" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
-            <li><a href="#"><img src="/assets/logos-redes/facebook.png" alt="facebook" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
-            <li> <a href="#"><img src="/assets/logos-redes/youtube.png" alt="youtube" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
-            <li> <a href="#"><img src="/assets/logos-redes/git.png" alt="github" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
+          <li><a href="https://www.linkedin.com/in/walter-fernando-guerrero-212548236/" target="_blank"><img src="/assets/logos-redes/in.png" alt="Linkedin" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
+          <li><a href="https://www.facebook.com/walterfernando.guerrero" target="_blank"><img src="/assets/logos-redes/facebook.png" alt="facebook" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
+          <li> <a href="https://www.youtube.com/channel/UCGGIaWhQNCfqI3imsLu8CvQ" target="_blank"><img src="/assets/logos-redes/youtube.png" alt="youtube" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
+          <li> <a href="https://github.com/walterfernandoguerrero" target="_blank"><img src="/assets/logos-redes/git.png" alt="github" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
+          <li> <a href="https://discord.com/channels/@me" target="_blank"><img src="/assets/logos-redes/discord.jpg" alt="discord" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
+          <li> <a href="https://www.instagram.com/guerrerowalterfernando/" target="_blank"><img src="/assets/logos-redes/instagram.png" alt="instagram" style="width: 42px; height: 42px; border-radius: 50%;"></a></li>
         </ul>
       </div>
     </header>

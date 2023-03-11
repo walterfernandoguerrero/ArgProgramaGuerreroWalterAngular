@@ -11,6 +11,9 @@ import { PersonaService } from 'src/app/servicios/persona.service';
   styleUrls: ['./acerca-de.component.css']
 })
 export class AcercaDeComponent implements OnInit {
+
+  
+
  info: AcercaDe = new AcercaDe(" "," "," "," "," ");
  
  constructor(private infServ: AcercaDeService, private router:Router, private estaLogeado:LoginEdicionService){ }

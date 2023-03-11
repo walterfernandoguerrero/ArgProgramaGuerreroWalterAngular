@@ -2,8 +2,9 @@
 body{
     background-image: url("https://www.leidainformatica.com/wp-content/uploads/2019/05/banner-home-informatica-1163x500.jpg");
     background-size:cover;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-position: center center;
+    background-color: rgb(135, 95, 151);
     
 }
 .Paneles{
@@ -24,7 +25,6 @@ header{
     overflow: hidden;
     background-image:url("/assets/banerAzul.jpg");
     background-position: center center;
-    /*background-repeat: no-repeat;*/
     width: 100%;
     height: 100%;
 
@@ -32,10 +32,9 @@ header{
 
 #fotoPerfil{
     border-radius: 50% ;
-    margin: 3px;
-    width:240px; 
-    height:260px;
-    /*padding: 0 20px;*/
+    margin: 0px;
+    width:290px; 
+    height:310px;
     border: solid 5px white;
    
     
@@ -46,6 +45,7 @@ header{
     background-color: black; 
     margin: 3px 3px 0px 0px;
     border: 1px solid white;
+    
 }
 .conborde{
     border: 2px solid white;
@@ -65,7 +65,40 @@ header{
     
 }
 small{
+    
     background-color: red;
     color: white;
-    font-size: 22px;
+    font-size: 24px;
+}
+
+small img{
+    width: 25px;
+    height: 21px;
+    opacity: 100%;
+    
+}
+@media screen and (max-width: 995px) {
+    table {
+        width:100%;
+    }
+    thead {
+        display: none;
+    }
+    tr:nth-of-type(2n) {
+        background-color: inherit;
+    }
+    tr td:first-child {
+        background: #000;
+        font-weight:bold;
+        font-size:1.3em;
+    }
+    tbody td {
+        display: block;
+        text-align:center;
+    }
+    tbody td:before {
+        content: attr(data-th);
+        display: block;
+        text-align:center;
+    }
 }

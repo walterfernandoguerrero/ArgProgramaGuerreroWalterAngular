@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { Lenguajes } from '../model/lenguajes';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LenguajeService {
-  URL= 'http://localhost:8080/lenguaje/';
+  URL= environment.apiURL + 'lenguaje/';
 
   constructor(private httpCli:HttpClient) { }
 

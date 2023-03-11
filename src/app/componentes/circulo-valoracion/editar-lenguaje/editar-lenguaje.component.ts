@@ -15,7 +15,7 @@ export class EditarLenguajeComponent implements OnInit {
 //prueba de validacion de campos en formulario ++++++++++
   lenguajeCtrl= new FormControl('',[Validators.required]);
   porcentajeCtrl = new FormControl('',[Validators.required, Validators.pattern(/^[0-9\d]{1,2}$/)]);
-  imajenCtrl = new FormControl('',[Validators.required]);
+  imagenCtrl = new FormControl('',[Validators.required]);
 //+++++++++++++++++++++++++++++++++++++++++++++++++++
   
   lenguaje:any =new Lenguajes('',null,'');

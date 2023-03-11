@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { persona } from '../model/persona.model';
 
 
@@ -8,7 +9,7 @@ import { persona } from '../model/persona.model';
   providedIn: 'root'
 })
 export class PersonaService {
-URL = 'http://localhost:8080/';
+URL = environment.apiURL;
   constructor(private http: HttpClient) { }
 
   public getPersona(): Observable<persona>{
@@ -17,6 +18,6 @@ URL = 'http://localhost:8080/';
 
   //traer lista de mis datos de personas
 public lista():Observable<persona[]>{
-  return this.http.get<persona[]>(this.URL+'ver/personas');//es un vector la  tabla de personas
+  return this.http.get<persona[]>(this.URL+'ver/personas');//es un vector con la tabla de personas
 }
 }

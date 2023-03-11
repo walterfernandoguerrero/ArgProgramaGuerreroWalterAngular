@@ -5,25 +5,77 @@
             <form (ngSubmit)="onCreate()" novalidate="ngForm">
                 <div class="form-group">
                     <label for="titulo" style="color:white;">TITULO :</label>
-                    <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="proyecto.titulo" required>
+                    <input type="text" class="form-control" id="titulo" name="titulo"
+                     [(ngModel)]="proyecto.titulo" required [formControl]="tituloCtrl">
+                     <p>
+                        <small *ngIf="tituloCtrl.hasError('required') && tituloCtrl.dirty">
+                            <img src="/assets/warning.png" alt="error">...Este campo es requerido no puede estar vacio...
+                        </small>
+                     </p>
                 </div>
+
                 <div class="form-group">
                     <label for="lenguaje" style="color:white;">LENGUAJE :</label>
-                    <input type="text" class="form-control" id="lenguaje" name="lenguaje" [(ngModel)]="proyecto.lenguaje" required>
+                    <input type="text" class="form-control" id="lenguaje" name="lenguaje" 
+                    [(ngModel)]="proyecto.lenguaje" required [formControl]="lenguajeCtrl">
+                    <p>
+                        <small *ngIf="lenguajeCtrl.hasError('required') && lenguajeCtrl.dirty">
+                            <img src="/assets/warning.png" alt="error">...Este campo es requerido no puede estar vacio...
+                        </small>
+                    </p>
                 </div>
+
                 <div class="form-group">
                     <label for="herramientas" style="color:white;">HERRAMIENTAS :</label>
-                    <input type="text" class="form-control" id="herramientas" name="herramientas" [(ngModel)]="proyecto.herramientas" required>
+                    <input type="text" class="form-control" id="herramientas" name="herramientas"
+                     [(ngModel)]="proyecto.herramientas" required [formControl]="herramientasCtrl">
+                     <p>
+                        <small *ngIf="herramientasCtrl.hasError('required') && herramientasCtrl.dirty">
+                            <img src="/assets/warning.png" alt="error">...Este campo es requerido no puede estar vacio...
+                        </small>
+                    </p>
+                    <p>
+                        <small *ngIf="herramientasCtrl.hasError('maxlength')">
+                            <img src="/assets/warning.png" alt="error">...este campo no puede tener mas de 150 caracteres...
+                        </small>
+                    </p>
                 </div>
+
                 <div class="form-group">
                     <label for="detalle" style="color:white;">DETALLE :</label>
-                    <input type="text" class="form-control" id="detalle" name="detalle" [(ngModel)]="proyecto.detalle" required>
+                    <input type="text" class="form-control" id="detalle" name="detalle" 
+                    [(ngModel)]="proyecto.detalle" required [formControl]="detalleCtrl">
+                    <p>
+                        <small *ngIf="detalleCtrl.hasError('required') && detalleCtrl.dirty">
+                            <img src="/assets/warning.png" alt="error">...Este campo es requerido no puede estar vacio...
+                        </small>
+                    </p>
+                    <p>
+                        <small *ngIf="detalleCtrl.hasError('maxlength')">
+                            <img src="/assets/warning.png" alt="error">...este campo no puede tener mas de 150 caracteres...
+                        </small>
+                    </p>
                 </div>
+
                 <div class="form-group">
                     <label for="git" style="color:white;">GIT :</label>
-                    <input type="text" class="form-control" id="git" name="git" [(ngModel)]="proyecto.git" required>
+                    <input type="text" class="form-control" id="git" name="git"
+                     [(ngModel)]="proyecto.git" required [formControl]="gitCtrl">
+                     <p>
+                        <small *ngIf="gitCtrl.hasError('required') && gitCtrl.dirty">
+                            <img src="/assets/warning.png" alt="error">...Este campo es requerido no puede estar vacio...
+                        </small>
+                    </p>
+                    <p>
+                        <small *ngIf="gitCtrl.hasError('maxlength')">
+                            <img src="/assets/warning.png" alt="error">...este campo no puede tener mas de 150 caracteres...
+                        </small>
+                    </p>
                 </div>
-                <button class="btn btn-success" >
+
+                <button  [disabled]="tituloCtrl.invalid || lenguajeCtrl.invalid || 
+                herramientasCtrl.invalid || detalleCtrl.invalid || gitCtrl.invalid"
+                class="btn btn-success" >
                     EDITAR PROYECTO
                 </button>
             </form>

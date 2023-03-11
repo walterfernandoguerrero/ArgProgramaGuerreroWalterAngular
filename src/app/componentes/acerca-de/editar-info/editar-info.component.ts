@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AcercaDe } from 'src/app/model/acerca-de';
 import { AcercaDeService } from 'src/app/servicios/acerca-de.service';
@@ -9,6 +10,17 @@ import { AcercaDeService } from 'src/app/servicios/acerca-de.service';
   styleUrls: ['./editar-info.component.css']
 })
 export class EditarInfoComponent implements OnInit {
+
+  //validacion de datos 
+  texto:any = /^.{4,250}$/;
+
+  parrafo1Ctrl=new FormControl('',[Validators.required, Validators.pattern(this.texto)]);
+  parrafo2Ctrl=new FormControl('',[Validators.required, Validators.pattern(this.texto)]);
+  parrafo3Ctrl=new FormControl('',[Validators.required, Validators.pattern(this.texto)]);
+  parrafo4Ctrl=new FormControl('',[Validators.required, Validators.pattern(this.texto)]);
+  parrafo5Ctrl=new FormControl('',[Validators.required, Validators.pattern(this.texto)]);
+
+  //
 
   info: any= new AcercaDe("","","","","");
 

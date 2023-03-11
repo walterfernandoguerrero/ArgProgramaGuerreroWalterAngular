@@ -1,0 +1,32 @@
+<div class="body">
+    <div class="mi-login" >
+        <div class="arg-prog">
+            <img src="/assets/arg-programa.png" alt="logo" width="100%">
+        </div>
+        <img src="/assets/usuarioPc.png" alt="usuario" width="50%">
+        <form  [formGroup]="myForm" (ngSubmit)="submitFormulario()" >
+            <div>
+            <label for="email">Email</label>
+            <input formControlName="email"  type="email" id="email" name="email">
+            </div> 
+            
+            <div>
+                <label for="pasw">Contraseña</label>
+                <input formControlName="password" type="password" id="pasw" name="pasw">
+                
+            </div>
+            <div class="check">
+                <label for="check">verClave</label>
+                <input type="checkbox"  (click)="verClave()">
+            
+            </div>
+            <br>
+            <div>
+                <input type="submit" class=" botonMio btn btn-outline-ligth" value="LOGIN" >
+            </div>
+    
+        </form>
+    </div>
+   
+</div>
+

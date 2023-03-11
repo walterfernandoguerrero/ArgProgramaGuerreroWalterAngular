@@ -1,15 +1,32 @@
-.contenedor{
-    text-align: center;
-    padding: 10px;
+.body{
+
+    width: 330px;
     margin: 0 auto;
-    width: 300px;
-    
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+   
+   
+}
+.mi-login{
+    padding: 4%;
+    border-radius: 10px;
+    border: 7px solid orange;
+    margin-top: 1px;
+    max-width: 330px;
+    text-align: center;
+}
+.arg-prog{
+    background-color: white;
 }
 input{
+    border-radius: 10px;
     display: block;
     margin-bottom: 30px;
 }
-#usuario{
+
+#email{
     padding: 20px;
     width: 100%;
 }
@@ -18,7 +35,6 @@ input{
     width: 100%;
 
 }
-
 .check {
     width: 100%;
     text-align: left;

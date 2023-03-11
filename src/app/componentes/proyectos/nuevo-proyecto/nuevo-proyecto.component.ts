@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Proyecto } from 'src/app/model/proyecto';
 import { ProyectoService } from 'src/app/servicios/proyecto.service';
@@ -9,6 +10,15 @@ import { ProyectoService } from 'src/app/servicios/proyecto.service';
   styleUrls: ['./nuevo-proyecto.component.css']
 })
 export class NuevoProyectoComponent implements OnInit {
+
+  //validacion forms---
+  tituloCtrl= new FormControl('',[Validators.required]);
+  lenguajeCtrl= new FormControl('',[Validators.required]);
+  herramientasCtrl= new FormControl('',[Validators.required, Validators.maxLength(150)]);
+  detalleCtrl=new FormControl('',[Validators.required, Validators.maxLength(150)]);
+  gitCtrl=new FormControl('',[Validators.required, Validators.maxLength(150)]);
+  //
+
 titulo="";
 lenguaje="";
 herramientas="";
@@ -31,14 +41,3 @@ constructor(private servProy: ProyectoService, private router: Router) { }
 
 }
 
-/**
-  onCreate(): void {
-
-    const educacion= new Educacion(this.nombreEdu, this.descripcionEdu)
-    this.servEducacion.save(educacion).subscribe(
-      data =>{
-        alert("Educacion agregada correctamente");
-        this.router.navigate(['']);
-      }
-    )
- */
