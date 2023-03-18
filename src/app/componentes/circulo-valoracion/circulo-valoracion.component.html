@@ -1,4 +1,9 @@
 <div class="row">
+    <div class="botonDerecha">
+        <button class="btn btn-success" *ngIf="autorizado()" routerLink="/pagNuevoLeng">Agregar Valoracion</button>
+    </div>
+    <br>
+    <br>
     <div class="text-center col-sm-4 col-md-4 col-lg-4" *ngFor="let leng of misLenguajes">
         
         <circle-progress 
@@ -22,7 +27,8 @@
             <p>{{leng.porcentaje}}%</p>
         </div>
         <div>
-            <button class="btn btn-success miBoton" *ngIf="autorizado()" routerLink="/pagEditLenguaje/{{leng.id}}">Editar</button>
+            <button class="btn btn-success miBoton " *ngIf="autorizado()" routerLink="/pagEditLenguaje/{{leng.id}}">Editar</button>
+            <button class="btn btn-success miBoton" *ngIf="autorizado()" (click)="borrar(leng.id)">Borrar</button>
         </div>
         <br>
         <br>

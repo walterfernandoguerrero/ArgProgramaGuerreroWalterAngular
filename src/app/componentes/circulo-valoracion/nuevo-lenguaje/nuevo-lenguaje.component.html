@@ -3,23 +3,21 @@
     <div class="row" >
         <div>
             <form (ngSubmit)="onCreate()" novalidate="ngForm">
-
                 <div class="form-group">
                     <label for="nombreLenguje" style="color:white;">LENGUAJE:</label>
                     <input type="text" class="form-control" id="nombreLeguaje" name="nombreLenguaje"
-                     [(ngModel)]="lenguaje.nombreLenguaje" required [formControl]="lenguajeCtrl">
+                     [(ngModel)]="nombreLenguaje" required  [formControl]="lenguajeCtrl">
                      <p>
                         <small *ngIf="lenguajeCtrl.hasError('required') && lenguajeCtrl.dirty">
                             <img src="/assets/warning.png" alt="error">...Este campo es requerido no puede estar vacio...
                         </small>
                     </p>
-
                 </div>
 
                 <div class="form-group">
                     <label for="porcentaje" style="color:white;">PORCENTAJE:</label>
                     <input type="text" class="form-control" id="porcentaje" name="porcentaje"
-                     [(ngModel)]="lenguaje.porcentaje" required [formControl]="porcentajeCtrl">
+                     [(ngModel)]="porcentaje" required [formControl]="porcentajeCtrl">
                     <p>
                         <small *ngIf="porcentajeCtrl.hasError('required') && porcentajeCtrl.dirty">
                             <img src="/assets/warning.png" alt="error">...Este campo es requerido no puede estar vacio...
@@ -32,20 +30,23 @@
                     </p>
                 
                 </div>
+
                 <div class="form-group">
                     <label for="imagen" style="color:white;">IMAGEN:</label>
                     <input type="text" class="form-control" id="imagen" name="descripcionEdu"
-                     [(ngModel)]="lenguaje.urlImagen" required [formControl]="imagenCtrl">
+                     [(ngModel)]="urlImagen" required [formControl]="imagenCtrl">
                      <p>
                         <small *ngIf="imagenCtrl.hasError('required') && imagenCtrl.dirty">
                             <img src="/assets/warning.png" alt="error">...Este campo es requerido no puede estar vacio...
                         </small>
                     </p>
                 </div>
-                <button [disabled]="lenguajeCtrl.invalid ||porcentajeCtrl.invalid || imagenCtrl.invalid" class="btn btn-success"  >
-                    Editar Lenguaje
+
+                <button [disabled]="lenguajeCtrl.invalid || porcentajeCtrl.invalid || imagenCtrl.invalid" class="btn btn-success"  >
+                    Nueva Valoracion
                 </button>
             </form>
         </div>
     </div>
 </div>
+

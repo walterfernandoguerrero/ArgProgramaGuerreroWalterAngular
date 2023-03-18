@@ -14,11 +14,11 @@ export class DatosPersonalesService {
   constructor(private http: HttpClient ) {}
 //traer datos
 public getDatos(): Observable<DatosPersonales>{
-   return this.http.get<DatosPersonales>(this.URL + `traerDatos/${27}`);//es el id de la tabla tener en cuenta en deploy
+   return this.http.get<DatosPersonales>(this.URL + `traerDatos/${4}`);//es el id de la tabla tener en cuenta en deploy
 }
 //traer un dato
 public detail(id:number): Observable<DatosPersonales>{
-  return this.http.get<DatosPersonales>(this.URL + `traerDatos/${27}`);
+  return this.http.get<DatosPersonales>(this.URL + `traerDatos/${4}`);
   
 }
 //grabar o editar mi perfil 

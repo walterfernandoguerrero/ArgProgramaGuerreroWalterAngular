@@ -31,6 +31,7 @@ import { EditarProyectoComponent } from './componentes/proyectos/editar-proyecto
 import { CirculoLogrosComponent } from './componentes/circulo-logros/circulo-logros.component';
 import { EditarLenguajeComponent } from './componentes/circulo-valoracion/editar-lenguaje/editar-lenguaje.component';
 import { IngresoComponent } from './componentes/ingreso/ingreso.component';
+import { NuevoLenguajeComponent } from './componentes/circulo-valoracion/nuevo-lenguaje/nuevo-lenguaje.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { IngresoComponent } from './componentes/ingreso/ingreso.component';
     EditarProyectoComponent,
     CirculoLogrosComponent,
     EditarLenguajeComponent,
-    IngresoComponent
+    IngresoComponent,
+    NuevoLenguajeComponent
   ],
   imports: [
     BrowserModule,
