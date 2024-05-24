@@ -14,12 +14,17 @@ export class IngresoComponent implements OnInit {
   //variables
   public myForm: FormGroup;
   public listaUsuarios:persona[]= [];
+  public carga: boolean;
+  
 
-  constructor(private svPer:PersonaService,  private fb:FormBuilder, private svIngPag: IngresarPaginaService ) { }
+  constructor(private svPer:PersonaService,  private fb:FormBuilder, private svIngPag: IngresarPaginaService ) {
+    this.carga=true
+   }
 
   ngOnInit(): void {
     this.myForm=this.createMyForm();
     this.cargarUsuarios();
+   
   }
 
   //funcion
@@ -36,8 +41,8 @@ export class IngresoComponent implements OnInit {
     console.log(this.myForm.value);
     //console.log(this.listaUsuarios);
     if(!this.svIngPag.ingresarDatosPag(this.myForm.value, this.listaUsuarios)){ //aqui se llena el objeto del formulario
-      alert('no son validos email y clave o el servicio no esta conectado a la red');
-      this.reset();
+      alert('no son validos email y clave o el servicio gratuito esta cargando los servicios');
+      //this.reset();
     }
     
     
@@ -45,7 +50,14 @@ export class IngresoComponent implements OnInit {
 
   //traer datos de la bd personas
   cargarUsuarios(): void {
-    this.svPer.lista().subscribe(data =>{this.listaUsuarios=data})
+    //this.carga=true;
+    console.log(this.carga);
+    this.svPer.lista().subscribe(data =>{this.listaUsuarios=data;
+    this.carga=false;
+    }
+      );
+    //this.carga=false;
+    console.log(this.carga);
 
   }
   reset(){
@@ -64,4 +76,7 @@ export class IngresoComponent implements OnInit {
     }
   }
 
+  
+  
+  
 }

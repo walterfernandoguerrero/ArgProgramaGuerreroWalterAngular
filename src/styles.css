@@ -4,8 +4,7 @@ body{
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
-    background-color: rgb(135, 95, 151);
-    
+    background: linear-gradient(180deg, #6363d1, #e075e0 );
 }
 .Paneles{
     border: 5px solid greenyellow;

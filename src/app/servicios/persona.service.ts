@@ -20,4 +20,5 @@ URL = environment.apiURL;
 public lista():Observable<persona[]>{
   return this.http.get<persona[]>(this.URL+'ver/personas');//es un vector con la tabla de personas
 }
+
 }

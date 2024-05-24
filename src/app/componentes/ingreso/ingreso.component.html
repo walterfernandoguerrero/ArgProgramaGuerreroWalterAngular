@@ -1,18 +1,23 @@
 <div class="body">
+    
     <div class="mi-login" >
         <div class="arg-prog">
             <img src="/assets/arg-programa.png" alt="logo" width="100%">
+        </div>
+        <div *ngIf="carga" style="background-color: aqua;">
+            <img src="/assets/cargando.gif" alt="carga_servicio" width="30%">
+            ESPERANDO SERVICIOS.....
         </div>
         <img src="/assets/usuarioPc.png" alt="usuario" width="50%">
         <form  [formGroup]="myForm" (ngSubmit)="submitFormulario()" >
             <div>
             <label for="email">Email</label>
-            <input formControlName="email"  type="email" id="email" name="email">
+            <input formControlName="email"  type="email" id="email" name="email" value="guerrerowalterfernado@gmail.com">
             </div> 
             
             <div>
                 <label for="pasw">Contraseña</label>
-                <input formControlName="password" type="password" id="pasw" name="pasw">
+                <input formControlName="password" type="password" id="pasw" name="pasw" value="123456">
                 
             </div>
             <div class="check">
@@ -21,7 +26,11 @@
             
             </div>
             <br>
-            <div>
+            <div *ngIf="carga" style="background-color: aqua;">
+                <img src="/assets/mjAtras.gif" alt="carga_servicio" width="30%">
+                <input type="submit" class=" botonMio btn btn-outline-ligth" value="LOGIN" disabled="true">
+            </div>
+            <div *ngIf="!carga">
                 <input type="submit" class=" botonMio btn btn-outline-ligth" value="LOGIN" >
             </div>
     
